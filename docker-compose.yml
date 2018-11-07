@@ -1,0 +1,14 @@
+version: "3"
+services:
+  torhaproxy:
+    build:
+      context: .
+    environment:
+      TOR_PROCS_NUM: 2
+      TOR_IP_ROTATION_INTERVAL: 60
+    tty: true
+    stdin_open: true
+    container_name: torhaproxy
+    image: torhaproxy:latest
+    ports:
+      - 8081:8081
